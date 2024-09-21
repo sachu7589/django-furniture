@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Heritage pathe">
+    <meta name="keywords" content="Heritage pathe furniture artistry">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heritage pathe</title>
+    <link rel="icon" href="img/ic.jpg" type="image/jpeg">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'web_temp/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__close">+</div>
+        <ul class="offcanvas__widget">
+            <li><span class="icon_search search-switch"></span></li>
+        </ul>
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="img/DP 1.jpg" alt="" style="height: 100x; width: 100px;"></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <h6>Social Media</h6>
+                        <div class="footer__social" style="margin-top: 20px;">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>
+                        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/hp.png" alt="" style="height: 100x; width: 100px;"></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="{% url 'home_page' %}">Home</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li class="active"><a href="#">Category</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Living room</a></li>
+                                    <li><a href="#">Bedroom</a></li>
+                                    <li><a href="#">Cabinetry</a></li>
+                                    <li><a href="#">Dining & kitchen</a></li>
+                                    <li><a href="#">Seating</a></li>
+                                    <li><a href="#">Home essentials</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'about_page' %}">About</a></li>
+                            <li><a href="{% url 'contact_page' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__right">
+                        <ul class="header__right__widget">
+                            <li><span class="icon_search search-switch"> </span> &nbsp; Search</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                            <span>{{ cat_key.category_name }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Shop Section Begin -->
+    <section class="shop spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="shop__sidebar">
+                        <div class="sidebar__categories">
+                            <div class="section-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <div class="categories__accordion">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-heading">
+                                            <a href="#">{{ cat_key.category_name }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar__filter">
+                            <div class="section-title">
+                                <h4>By price</h4>
+                            </div>
+                            <div class="filter-range-wrap">
+                                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                data-min="100" data-max="500"></div>
+                                <div class="range-slider">
+                                    <div class="price-input">
+                                        <p>Price:</p>
+                                        <input type="text" id="minamount">
+                                        <input type="text" id="maxamount">
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">Filter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="row">
+
+                        {% for i in pro_key %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product__item">
+                                <a href="product_detail.html">
+                                <div class="product__item__pic set-bg" data-setbg="{{ i.product_image.url }}">
+                                </div>
+                                </a>
+                                <div class="product__item__text">
+                                    <h6><a href="#">{{ i.product_name }}</a></h6>
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="product__price">₹ {{ i.product_price }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer" style="background-color: #bbd4c3;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-7">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="./index.html"><img src="img/hp.png" alt="" style="height: 50px; width: 120px;"></a>
+                        </div>
+                        <p>We serve you with the latest furniture sets and home décor products that can make your home
+                            gorgeous and happiest place to stay</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-5">
+                    <div class="footer__widget">
+                        <h6>Quick links</h6>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="footer__widget">
+                        <h6>Category</h6>
+                        <ul>
+                            <li><a href="#">Living room</a></li>
+                            <li><a href="#">Bedroom</a></li>
+                            <li><a href="#">Cabinetry</a></li>
+                            <li><a href="#">Dining & kitchen</a></li>
+                            <li><a href="#">Home essentials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-8">
+                    <div class="footer__newslatter">
+                        <h6>Social Media</h6>
+                        <div class="footer__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright__text">
+                        <p>Copyright &copy;
+                            2024 All rights reserved | Heritage pathe
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'web_temp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'web_temp/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/main.js' %}"></script>
+</body>
+
+</html>

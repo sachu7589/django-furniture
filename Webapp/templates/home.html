@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Heritage pathe">
+    <meta name="keywords" content="Heritage pathe furniture artistry">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heritage pathe</title>
+    <link rel="icon" href="{% static 'web_temp/img/ic.jpg' %}" type="image/jpeg">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'web_temp/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/style.css' %}" type="text/css">
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__close">+</div>
+        <ul class="offcanvas__widget">
+            <li><span class="icon_search search-switch"></span></li>
+        </ul>
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="img/DP 1.jpg" alt="" style="height: 100x; width: 100px;"></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <h6>Social Media</h6>
+                        <div class="footer__social" style="margin-top: 20px;">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>
+                        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/hp.png" alt="" style="height: 100x; width: 100px;"></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="{% url 'product_page' %}">Products</a></li>
+                            <li><a href="#">Category</a>
+                                <ul class="dropdown">
+                                    {% for i in cat_key %}
+                                    <li><a href="{% url 'category_page' i.category_name %}">{{ i.category_name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'about_page' %}">About</a></li>
+                            <li><a href="{% url 'contact_page' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__right">
+                        <ul class="header__right__widget">
+                            <li><span class="icon_search search-switch"> </span> &nbsp; Search</li>
+                            <li><a href="{% url 'login_page' %}"><b>Register / Login</b></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Categories Section Begin -->
+    <section class="categories">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 p-0">
+                    <div class="categories__item categories__large__item set-bg" data-setbg="img/categories/lvr1.jpg">
+                        <div class="categories__text">
+                            <h1>Living Room</h1>
+                            <a href="#" style="margin-bottom: 100px;">View all</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" data-setbg="img/categories/be.jpg">
+                                <div class="categories__text">
+                                    <h4>Bedroom</h4>
+                                    <a href="#" style="margin-bottom: 150px;">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" data-setbg="img/Categories/cab.jpg">
+                                <div class="categories__text">
+                                    <h4>Cabinetry</h4>
+                                    <a href="#" style="margin-bottom: 150px;">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" data-setbg="img/categories/kitchen1.jpg">
+                                <div class="categories__text">
+                                    <h4>Kitchen</h4>
+                                    <a href="#" style="margin-bottom: 150px;">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                            <div class="categories__item set-bg" data-setbg="img/categories/he.jpg">
+                                <div class="categories__text">
+                                    <h4>Home essesntials</h4>
+                                    <a href="#" style="margin-bottom: 150px;">View all</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="section-title">
+                        <h4>New product</h4>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <ul class="filter__controls">
+                        <li class="active" data-filter="*">All</li>
+                        <li data-filter=".living">Living room</li>
+                        <li data-filter=".Bedroom">Bedroom</li>
+                        <li data-filter=".Cabinetry">Cabinetry</li>
+                        <li data-filter=".kitchen">Kitchen</li>
+                        <li data-filter=".Seating">Seating</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row property__gallery">
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix living">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/living.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/living.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">living product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix Bedroom">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/bed.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/bed.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Bedroom product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 1500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix Cabinetry">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/lvr.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/lvr.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Cabinetry product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 2500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix living">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/living.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/living.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">living product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix kitchen">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/kit.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/kit.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">kitchen product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 3500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix Bedroom">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/bed.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/bed.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Bedroom product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 1500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix Seating">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/set.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/set.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Seating product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 4500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mix Cabinetry">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/lvr.jpg">
+                            <div class="label new">New</div>
+                            <ul class="product__hover">
+                                <li><a href="img/product/lvr.jpg" class="image-popup"><span
+                                            class="arrow_expand"></span></a></li>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Cabinetry product 1</a></h6>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="product__price">₹ 2500</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Banner Section Begin -->
+    <section class="banner set-bg" data-setbg="img/banner/ban1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-8 m-auto">
+                    <div class="banner__slider owl-carousel">
+                        <div class="banner__item">
+                            <div class="banner__text">
+                                <h1>Wooden Furniture</h1>
+                            </div>
+                        </div>
+                        <div class="banner__item">
+                            <div class="banner__text">
+                                <h1>Wooden Crafts</h1>
+                            </div>
+                        </div>
+                        <div class="banner__item">
+                            <div class="banner__text">
+                                <h1>Wooden Materials</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Banner Section End -->
+
+    <!-- Trend Section Begin -->
+    <section class="trend spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="trend__content">
+                        <div class="section-title">
+                            <h4>Trending</h4>
+                        </div>
+                        <div class="trend__item">
+                            <div class="trend__item__pic">
+                                <img src="img/trend/living.jpg" alt="" style="width: 100px;  height: 100px;">
+                            </div>
+                            <div class="trend__item__text">
+                                <h6>Trending 1</h6>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product__price">₹ 3500</div>
+                            </div>
+                        </div>
+                        <div class="trend__item">
+                            <div class="trend__item__pic">
+                                <img src="img/trend/cab.jpg" alt="" style="width: 100px;  height: 100px;">
+                            </div>
+                            <div class="trend__item__text">
+                                <h6>Trending 2</h6>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product__price">₹ 1500</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="trend__content">
+                        <div class="section-title">
+                            <h4>Best selling</h4>
+                        </div>
+                        <div class="trend__item">
+                            <div class="trend__item__pic">
+                                <img src="img/trend/living.jpg" alt="" style="width: 100px;  height: 100px;">
+                            </div>
+                            <div class="trend__item__text">
+                                <h6>Selling 1</h6>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product__price">₹ 500</div>
+                            </div>
+                        </div>
+                        <div class="trend__item">
+                            <div class="trend__item__pic">
+                                <img src="img/trend/lvr.jpg" alt="" style="width: 100px;  height: 80px;">
+                            </div>
+                            <div class="trend__item__text">
+                                <h6>selling 2</h6>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product__price">₹ 7500</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="trend__content">
+                        <div class="section-title">
+                            <h4>Featured</h4>
+                        </div>
+                        <div class="trend__item">
+                            <div class="trend__item__pic">
+                                <img src="img/trend/kitch.jpg" alt="" style="width: 100px;  height: 100px;">
+                            </div>
+                            <div class="trend__item__text">
+                                <h6>Featured 1</h6>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product__price">₹ 4500</div>
+                            </div>
+                        </div>
+                        <div class="trend__item">
+                            <div class="trend__item__pic">
+                                <img src="img/trend/he.jpg" alt="" style="width: 100px;  height: 80px;">
+                            </div>
+                            <div class="trend__item__text">
+                                <h6>Featured 2</h6>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product__price">₹ 5500</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trend Section End -->
+
+    <!-- Discount Section Begin -->
+    <section class="discount">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 p-0">
+                    <div class="discount__pic">
+                        <img src="img/living.jpg" alt="" style="height: 390px;  width: 400px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 p-0">
+                    <div class="discount__text">
+                        <div class="discount__text__title">
+                            <span>Discount</span>
+                            <h2>Summer 2024</h2>
+                            <h5><span>Sale</span> 50%</h5>
+                        </div>
+                        <div class="discount__countdown" id="countdown-time">
+                            <div class="countdown__item">
+                                <span>22</span>
+                                <p>Days</p>
+                            </div>
+                            <div class="countdown__item">
+                                <span>18</span>
+                                <p>Hour</p>
+                            </div>
+                            <div class="countdown__item">
+                                <span>46</span>
+                                <p>Min</p>
+                            </div>
+                            <div class="countdown__item">
+                                <span>05</span>
+                                <p>Sec</p>
+                            </div>
+                        </div>
+                        <a href="#">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Discount Section End -->
+
+    <!-- Services Section Begin -->
+    <section class="services spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="services__item">
+                        <i class="fa fa-car"></i>
+                        <h6>Free Shipping</h6>
+                        <p>For all order over ₹ 5000</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="services__item">
+                        <i class="fa fa-money"></i>
+                        <h6>Money Back Guarantee</h6>
+                        <p>If good have Problems</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="services__item">
+                        <i class="fa fa-support"></i>
+                        <h6>Online Support 24/7</h6>
+                        <p>Dedicated support</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="services__item">
+                        <i class="fa fa-headphones"></i>
+                        <h6>Payment Secure</h6>
+                        <p>100% secure payment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer" style="background-color: #bbd4c3;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-7">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="./index.html"><img src="img/hp.png" alt="" style="height: 50px; width: 120px;"></a>
+                        </div>
+                        <p>We serve you with the latest furniture sets and home décor products that can make your home
+                            gorgeous and happiest place to stay</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-5">
+                    <div class="footer__widget">
+                        <h6>Quick links</h6>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="footer__widget">
+                        <h6>Category</h6>
+                        <ul>
+                            <li><a href="#">Living room</a></li>
+                            <li><a href="#">Bedroom</a></li>
+                            <li><a href="#">Cabinetry</a></li>
+                            <li><a href="#">Dining & kitchen</a></li>
+                            <li><a href="#">Home essentials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-8">
+                    <div class="footer__newslatter">
+                        <h6>Social Media</h6>
+                        <div class="footer__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright__text">
+                        <p>Copyright &copy;
+                            2024 All rights reserved | Heritage pathe
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'web_temp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'web_temp/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/main.js' %}"></script>
+</body>
+
+</html>

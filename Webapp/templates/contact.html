@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Heritage pathe">
+    <meta name="keywords" content="Heritage pathe furniture artistry">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heritage pathe</title>
+    <link rel="icon" href="img/ic.jpg" type="image/jpeg">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'web_temp/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'web_temp/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__close">+</div>
+        <ul class="offcanvas__widget">
+            <li><span class="icon_search search-switch"></span></li>
+        </ul>
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="img/DP 1.jpg" alt="" style="height: 100x; width: 100px;"></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <h6>Social Media</h6>
+                        <div class="footer__social" style="margin-top: 20px;">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>
+                        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/hp.png" alt="" style="height: 100x; width: 100px;"></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li ><a href="{% url 'home_page' %}">Home</a></li>
+                            <li><a href="{% url 'product_page' %}">Products</a></li>
+                            <li><a href="#">Category</a>
+                                <ul class="dropdown">
+                                    <li><a href="product_cat.html">Living room</a></li>
+                                    <li><a href="#">Bedroom</a></li>
+                                    <li><a href="#">Cabinetry</a></li>
+                                    <li><a href="#">Dining & kitchen</a></li>
+                                    <li><a href="#">Seating</a></li>
+                                    <li><a href="#">Home essentials</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="{% url 'about_page' %}">About</a></li>
+                            <li class="active"><a href="{% url 'contact_page' %}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__right">
+                        <ul class="header__right__widget">
+                            <li><span class="icon_search search-switch"> </span> &nbsp; Search</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <span>Contact</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__content">
+                        <div class="contact__address">
+                            <h5>Contact info</h5>
+                            <ul>
+                                <li>
+                                    <h6><i class="fa fa-map-marker"></i> Address</h6>
+                                    <p>Pala</p>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-phone"></i> Phone</h6>
+                                    <p><span>+91 94460 04444</span></p>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-headphones"></i> Support</h6>
+                                    <p>info@heritagepathe.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contact__form">
+                            <h5>SEND MESSAGE</h5>
+                            <form action="{% url 'save_contact' %}" method="post">
+                                {% csrf_token %}
+                                <input type="text" placeholder="Name" name="name">
+                                <input type="text" placeholder="Email" name="email">
+                                <textarea placeholder="Message" name="msge"></textarea>
+                                <button type="submit" class="site-btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31460.69300875234!2d76.66723226093964!3d9.716276934205396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cdceb06d5e9f%3A0xb33a8fbfd6cf2e34!2sPala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1711638104743!5m2!1sen!2sin" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer" style="background-color: #bbd4c3;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-7">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                        <a href="./index.html"><img src="img/hp.png" alt="" style="height: 50px; width: 120px;"></a>
+                    </div>
+                    <p>We serve you with the latest furniture sets and home décor products that can make your home
+                        gorgeous and happiest place to stay</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-5">
+                <div class="footer__widget">
+                    <h6>Quick links</h6>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4">
+                <div class="footer__widget">
+                    <h6>Category</h6>
+                    <ul>
+                        <li><a href="#">Living room</a></li>
+                        <li><a href="#">Bedroom</a></li>
+                        <li><a href="#">Cabinetry</a></li>
+                        <li><a href="#">Dining & kitchen</a></li>
+                        <li><a href="#">Home essentials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-8">
+                <div class="footer__newslatter">
+                    <h6>Social Media</h6>
+                    <div class="footer__social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer__copyright__text">
+                    <p>Copyright &copy;
+                        2024 All rights reserved | Heritage pathe
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Search Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+<!-- Search End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% if messages %}
+  {% for i in messages %}
+    {% if i.tags == 'success' %}
+      <script>
+        Swal.fire('{{i}}','','success')
+      </script>
+    {% elif i.tags == 'warning' %}
+      <script>
+        swal.fire('{{i}}','','warning')
+      </script>
+    {% elif i.tags == 'info' %}
+      <script>
+        swal.fire('{{i}}','','info')
+      </script>
+    {% else %}
+      <script>
+        swal('{{i}}','','error')
+      </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<!-- Js Plugins -->
+<script src="{% static 'web_temp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'web_temp/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/jquery.nicescroll.min.js' %}"></script>
+    <script src="{% static 'web_temp/js/main.js' %}"></script>
+</body>
+
+</html>
